@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kunci Rahasia Kota Pancasila</title>
+<style>
+  :root{--navy:#183153;--blue:#2867a8;--yellow:#ffd166;--cream:#fff9e9;--green:#3b8c65;--red:#bd4545}
+  *{box-sizing:border-box}
+  body{margin:0;padding:28px 14px;background:linear-gradient(135deg,#dff4ff,#fff0c9);font-family: "Trebuchet MS",Arial,sans-serif;color:var(--navy)}
+  .wrap{max-width:780px;margin:auto}
+  .card{position:relative;overflow:hidden;background:var(--cream);border:4px solid var(--navy);border-radius:26px;box-shadow:0 12px 0 #18315325,0 18px 35px #18315320}
+  .top{position:relative;text-align:center;padding:24px 22px 18px;background:linear-gradient(135deg,#3a86c8,#71c6e8);color:#fff;border-bottom:4px dashed var(--yellow)}
+  .badge{display:inline-block;background:var(--yellow);color:var(--navy);font-weight:900;font-size:.78rem;letter-spacing:1.5px;padding:7px 13px;border-radius:99px;border:2px solid #fff;margin-bottom:10px}
+  h1{margin:0;font-size:clamp(1.6rem,5vw,2.55rem);line-height:1.05;text-transform:uppercase;text-shadow:2px 3px 0 #18315355}
+  .subtitle{margin:9px 0 0;font-weight:700;letter-spacing:.4px}
+  .scene{height:132px;position:relative;background:linear-gradient(#bceaff 0 70%,#8bd28c 70%);overflow:hidden}
+  .sun{position:absolute;right:42px;top:16px;width:43px;height:43px;border-radius:50%;background:#ffcf55;box-shadow:0 0 0 8px #ffcf5538}
+  .cloud{position:absolute;top:23px;left:48px;font-size:35px}
+  .building{position:absolute;bottom:0;width:76px;height:72px;background:#ffb86b;border:3px solid var(--navy);border-bottom:0;border-radius:7px 7px 0 0}
+  .building:before{content:"";position:absolute;top:12px;left:12px;width:13px;height:16px;background:#e9f7ff;border:2px solid var(--navy);box-shadow:29px 0 #e9f7ff,29px 0 0 2px var(--navy),0 25px #e9f7ff,0 25px 0 2px var(--navy),29px 25px #e9f7ff,29px 25px 0 2px var(--navy)}
+  .b1{left:9%;height:64px;background:#ffcf70}.b2{left:23%;height:91px;background:#e99ab0}.b3{right:22%;height:72px;background:#9fbbff}.b4{right:8%;height:54px;background:#f2a76c}
+  .tree{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:100px;height:120px;z-index:2}
+  .tree .trunk{position:absolute;bottom:0;left:43px;width:19px;height:48px;background:#9b5b35;border:3px solid var(--navy);border-bottom:0;border-radius:6px 6px 0 0}
+  .tree .leaf{position:absolute;background:#329765;border:3px solid var(--navy);border-radius:50%}
+  .leaf.l1{width:67px;height:63px;left:16px;top:22px}.leaf.l2{width:57px;height:55px;left:0;top:43px}.leaf.l3{width:59px;height:57px;right:0;top:43px}.leaf.l4{width:55px;height:52px;left:23px;top:0;background:#48b779}
+  .tree .spark{position:absolute;right:-5px;top:15px;font-size:23px;z-index:3}
+  .content{padding:22px clamp(16px,4vw,32px) 28px}
+  .intro{font-weight:700;font-size:1.05rem;line-height:1.6;margin:0 0 16px}
+  .section-title{display:flex;align-items:center;gap:9px;color:#a64b23;font-weight:900;text-transform:uppercase;letter-spacing:.6px;margin:14px 0 8px}
+  .story{background:#fff;border:2px solid #f3c56d;border-left:8px solid #f3a83b;border-radius:14px;padding:15px 16px;line-height:1.65}
+  .question{font-weight:800;line-height:1.55;margin:17px 0 12px}
+  .answers{display:grid;gap:10px}
+  .answer{display:flex;gap:11px;align-items:flex-start;width:100%;text-align:left;padding:12px 13px;border:2px solid #bfd3e5;border-radius:13px;background:#fff;color:var(--navy);font:inherit;line-height:1.45;cursor:pointer;transition:.15s}
+  .answer:hover{border-color:var(--blue);transform:translateY(-1px)}
+  .answer .letter{flex:0 0 30px;height:30px;display:grid;place-items:center;background:#e4f2ff;border-radius:50%;font-weight:900}
+  .answer.selected{border-color:var(--blue);background:#edf7ff}.answer.correct{border-color:var(--green);background:#e7f8ed}.answer.wrong{border-color:var(--red);background:#fff0f0}
+  .feedback{display:none;margin-top:13px;padding:12px 14px;border-radius:12px;font-weight:700;line-height:1.5}.feedback.show{display:block}.feedback.good{background:#e4f7e9;color:#1c6a3c;border:2px solid #8bd3a1}.feedback.bad{background:#fff0e8;color:#963d2b;border:2px solid #f0b49c}
+  .rules{margin:18px 0;padding:14px 16px;background:#edf5ff;border-radius:13px;border:1px dashed #7aa6d2;line-height:1.6}.rules strong{display:block;margin-bottom:5px}.rules ul{margin:5px 0 0;padding-left:20px}
+  .secret{display:none;margin-top:18px;border:3px dashed #329765;border-radius:18px;background:#effff2;overflow:hidden}.secret.show{display:block;animation:pop .35s ease-out}.secret-head{background:#329765;color:#fff;text-align:center;padding:15px;font-weight:900;font-size:1.15rem}.secret-body{padding:18px;text-align:center;line-height:1.6}.secret-body p{margin:7px 0}.hint{margin:13px auto 0;max-width:520px;background:#fff;border:2px solid #8cc99c;border-radius:14px;padding:15px;font-weight:800;color:#225e3c}
+  .btnrow{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px}.btn{border:0;border-radius:999px;padding:12px 18px;font-weight:900;font-size:.95rem;cursor:pointer}.primary{background:var(--navy);color:#fff}.secondary{background:#ffe19a;color:var(--navy);border:2px solid var(--navy)}
+  .footer{text-align:center;background:#183153;color:#fff;padding:12px;font-size:.83rem;font-weight:700;letter-spacing:.3px}
+  @keyframes pop{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+  @media(max-width:480px){body{padding:12px 8px}.top{padding:20px 12px 16px}.scene{height:112px}.building{transform:scale(.8);transform-origin:bottom}.content{padding:17px 13px 22px}.answer{padding:10px}.tree{transform:translateX(-50%) scale(.85);transform-origin:bottom}}
+  @media print{body{background:#fff;padding:0}.wrap{max-width:none}.card{box-shadow:none;border-radius:0}.btnrow,.feedback{display:none!important}.secret{display:block!important;break-inside:avoid}.answer{break-inside:avoid}.content{padding:16px 22px}.scene{height:100px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main class="card">
+    <header class="top">
+      <div class="badge">🗝️ MISI RAHASIA • LEVEL TERAKHIR</div>
+      <h1>Puzzle Mission</h1>
+      <div class="subtitle">KOTA PANCASILA — Kunci Rahasia Kota</div>
+    </header>
+    <div class="scene" aria-label="Ilustrasi kota mini dan pohon rindang">
+      <div class="sun"></div><div class="cloud">☁️</div>
+      <div class="building b1"></div><div class="building b2"></div><div class="building b3"></div><div class="building b4"></div>
+      <div class="tree"><span class="leaf l1"></span><span class="leaf l2"></span><span class="leaf l3"></span><span class="leaf l4"></span><span class="trunk"></span><span class="spark">✨</span></div>
+    </div>
+    <section class="content">
+      <p class="intro">🧭 Petualang Pancasila, satu tantangan terakhir menantimu! Bacalah cerita berikut dengan teliti, lalu pilih satu jawaban yang paling tepat.</p>
+      <div class="section-title">🔎 Tantangan Rahasia</div>
+      <div class="story">Warga sebuah kampung mengadakan rapat untuk menentukan penggunaan taman. Sebagian warga ingin menjadikannya tempat bermain anak-anak, sedangkan warga lain ingin menggunakannya sebagai tempat membaca dan belajar bersama. Agar keputusan tidak merugikan siapa pun, semua warga diberi kesempatan menyampaikan pendapat. Setelah berdiskusi, mereka sepakat membagi waktu penggunaan taman dan membuat jadwal bersama.</div>
+      <p class="question">Sikap warga tersebut menunjukkan penerapan norma, penghormatan terhadap hak, dan pelaksanaan kewajiban karena ....</p>
+      <div class="answers" id="answers">
+        <button class="answer" data-choice="A"><span class="letter">A</span><span>Setiap warga harus mengikuti pendapat orang yang paling banyak berbicara.</span></button>
+        <button class="answer" data-choice="B"><span class="letter">B</span><span>Setiap warga berhak memaksakan keinginannya selama memiliki alasan.</span></button>
+        <button class="answer" data-choice="C"><span class="letter">C</span><span>Warga menghormati hak orang lain untuk berpendapat, menaati kesepakatan bersama, dan bertanggung jawab menjaga ketertiban.</span></button>
+        <button class="answer" data-choice="D"><span class="letter">D</span><span>Warga boleh menggunakan taman sesuka hati selama tidak ada petugas yang mengawasi.</span></button>
+      </div>
+      <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+      <div class="rules"><strong>📜 Aturan Misi</strong><ul><li>Pilih satu jawaban yang paling tepat.</li><li>Sampaikan pilihan jawaban kepada guru.</li><li>Petunjuk rahasia hanya boleh dibuka setelah jawaban dinyatakan benar.</li></ul></div>
+      <section class="secret" id="secret" aria-live="polite">
+        <div class="secret-head">🎉 SELAMAT, PETUALANG PANCASILA! 🎉</div>
+        <div class="secret-body">
+          <p>Kamu berhasil membuka kunci terakhir Kota Pancasila!</p>
+          <p>Sekarang, temukan kepingan puzzle terakhir untuk menyempurnakan kota.</p>
+          <div class="hint">🌳 PETUNJUK PENCARIAN 🌳<br><br>“Aku tumbuh menjulang dengan daun yang rindang. Saat matahari terasa terik, orang-orang berteduh di bawahku. Carilah kepingan puzzle yang tersembunyi tepat di bawahku!”</div>
+        </div>
+      </section>
+      <div class="btnrow">
+        <button class="btn secondary" id="resetBtn" type="button">↻ Ulangi Tantangan</button>
+        <button class="btn primary" type="button" onclick="window.print()">🖨️ Cetak Kartu / Simpan PDF</button>
+      </div>
+    </section>
+    <footer class="footer">BERPIKIR • BERDISKUSI • BERTANGGUNG JAWAB • JADI PETUALANG PANCASILA!</footer>
+  </main>
+</div>
+<script>
+  // Kunci jawaban digunakan oleh interaksi halaman; tidak ditampilkan pada kartu.
+  const correctAnswer = 'C';
+  const answerButtons = document.querySelectorAll('.answer');
+  const feedback = document.getElementById('feedback');
+  const secret = document.getElementById('secret');
+
+  answerButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      if (secret.classList.contains('show')) return;
+      answerButtons.forEach(item => item.classList.remove('selected','correct','wrong'));
+      button.classList.add('selected');
+      const choice = button.dataset.choice;
+      feedback.className = 'feedback show';
+      if (choice === correctAnswer) {
+        button.classList.add('correct');
+        feedback.classList.add('good');
+        feedback.textContent = 'Benar! Sampaikan jawabanmu kepada guru. Jika guru menyatakan benar, petunjuk rahasia dapat dibuka.';
+        // Dalam penggunaan kelas, guru mengonfirmasi jawaban sebelum membuka petunjuk.
+        const reveal = document.createElement('button');
+        reveal.type = 'button';
+        reveal.className = 'btn primary';
+        reveal.style.marginTop = '10px';
+        reveal.textContent = '🔓 Guru: Buka Petunjuk Rahasia';
+        reveal.onclick = () => { secret.classList.add('show'); reveal.remove(); secret.scrollIntoView({behavior:'smooth',block:'center'}); };
+        feedback.appendChild(document.createElement('br'));
+        feedback.appendChild(reveal);
+      } else {
+        button.classList.add('wrong');
+        feedback.classList.add('bad');
+        feedback.textContent = 'Belum tepat, petualang! Coba pikirkan kembali bagaimana warga menghormati pendapat, menaati kesepakatan, dan menjaga ketertiban.';
+      }
+    });
+  });
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    answerButtons.forEach(item => item.classList.remove('selected','correct','wrong'));
+    feedback.className = 'feedback';
+    feedback.textContent = '';
+    secret.classList.remove('show');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+</script>
+</body>
+</html>
